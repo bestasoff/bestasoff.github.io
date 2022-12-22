@@ -93,12 +93,12 @@ git checkout -b $DEPLOY_BRANCH
 export JEKYLL_ENV=production
 
 # Build site
-bundle exec jekyll build
+bundle exec jekyll builds
 
 # Delete and move files
-ls -R _site/*
+ls -R blog/*
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
-ls -R _site/*
+ls -R blog/*
 mv _site/* .
 rm -R _site/
 
