@@ -6,10 +6,10 @@ subtitle:
 
 profile:
   align: right
-  image: me.JPG
+  image: me.PNG
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Belarus-born citizen, U.S. Green Card holder</p>
+    <p>Belarus citizen, U.S. Green Card holder</p>
     <p>New York, USA</p>
 
 news: true  # includes a list of news items
