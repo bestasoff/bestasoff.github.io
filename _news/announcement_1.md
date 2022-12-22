@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2022-04-11 
 inline: true
 ---
 
-A simple inline announcement.
+My first blog [post](https://bestasoff.medium.com/how-to-fine-tune-very-large-model-if-it-doesnt-fit-on-your-gpu-3561e50859af) on Medium called: "How to fine tune VERY large model if it doesn’t fit on your GPU". Check it out!
