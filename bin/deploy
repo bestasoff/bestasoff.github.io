@@ -93,7 +93,7 @@ git checkout -b $DEPLOY_BRANCH
 export JEKYLL_ENV=production
 
 # Build site
-bundle exec jekyll builds
+bundle exec jekyll build
 
 # Delete and move files
 ls -R blog/*
