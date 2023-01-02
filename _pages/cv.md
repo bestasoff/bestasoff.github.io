@@ -4,24 +4,40 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 4
-cv_pdf: CV_Stanislau_Beliasau.pdf
+cv_pdf: document.pdf
 ---
 
 # Experience
 <h3><img src="https://freesoft.ru.net/storage/images/775/7748/774792/774792_normal.png" alt="gradient" width="25" height="25"/> Gradient </h3>
 <p style="text-align:left;">
-    <em>Computer Vision Engineer</em>
+    <em>Middle Computer Vision Engineer</em>
     <span style="float:right;">
         August, 2022 - Present
     </span>
 </p>
 <ul>
-    <li>Develop image-to-image filters for user photos, image enhancement and reshaping utilities.</li>
-    <li>Develop models for body reshaping.</li>
-    <li>Deploy new models on server or mobiles.</li>
-    <li>Research new methods and conduct various experiments.</li>
-    <li>Generate, maintain image datasets.</li>
-    <li>Work with diffusion models (Stable Diffusion, LDM), GANs, ViTs, CNNs, BLIP, CLIP.</li>
+    <li>Image-to-image translation</li>
+    <ul>
+        <li>Develop GAN-based filters;</li>
+        <li>Collect and create datasets;</li>
+        <li>Develop models for image, classification, body and face attributes segmentation;</li>
+        <li>Deploy models on the server;</li>
+        <li>Research and implement new methods;</li>
+    </ul>
+    <li>Image warping</li>
+    <ul>
+        <li>Developed and trained CNN-based models for image warping;</li>
+        <li>Collected and generated datasets;</li>
+        <li>Deploed models both on the server and IOS;</li>
+        <li>Researched and implemented new methods of image warping and data generation;</li>
+    </ul>
+    <li>Image generation</li>
+    <ul>
+        <li>Conducted a huge research of generative models (like Stable Diffusion, LDM);</li>
+        <li>Collected specific domain data (used CLIP, BLIP models);</li>
+        <li>Researched textual inversion methods  and fine-tuned these models;</li>
+        <li>Researched and implmented methods for model acceleration, distillation;</li>
+    </ul>
 </ul>
 
 <h3><img src="https://artlabs.tech/wp-content/uploads/2020/11/Logo.png" alt="artlabs" width="25" height="25"/> ArtLabs </h3>
@@ -33,7 +49,6 @@ cv_pdf: CV_Stanislau_Beliasau.pdf
 </p>
 <ul>
     <li>Developed time-series demand forecasting models.</li>
-    <li>Worked with unstructured data of different data using Pandas.</li>
     <li>Developed production pipelines to convert raw data into feature vector and to forecast the demand.</li>
 </ul>
 
