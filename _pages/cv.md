@@ -8,6 +8,20 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
 ---
 
 # Experience
+
+<h3><img src="https://pbs.twimg.com/media/FBp56YOXIAEYRSO.jpg" alt="yandex" width="25" height="25"/> Yandex School of Data Analysis </h3>
+<p style="text-align:left;">
+    <em>ML course tutor assistant</em>
+    <span style="float:right;">
+        May, 2021 - Present
+    </span>
+</p>
+<ul>
+    <li>Give lectures on machine learning including NLP and CV</li>
+    <li>Conduct seminars and check homework.</li>
+    <li>Implement LLM (GPT-2XL, OPT-6.7B) distributed training and inference pipelines: model-parallel, data-parallel, pipeline parallelism, memory offloading.</li>
+</ul>
+
 <h3>
     <img src="https://freesoft.ru.net/storage/images/775/7748/774792/774792_normal.png" alt="gradient" width="25" height="25"/>
     <img src="https://play-lh.googleusercontent.com/RujFpUpJZjc-d5bScOi-n-zs9ak4vTs_Y_bB1rJDdjLxpZsSilM67r49R2fwfuNneMc=w240-h480-rw" alt="gradient" width="25" height="25"/>
@@ -15,7 +29,7 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
 <p style="text-align:left;">
     <em>Middle Computer Vision Engineer</em>
     <span style="float:right;">
-        August, 2022 - Present
+        August, 2022 - May, 2023
     </span>
 </p>
 <ul>
@@ -109,5 +123,5 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
 </p>
 <p style="text-align:left;">
     <b>Tools:</b>
-    docker, docker-compose, git, Kubernetes, Airflow, Prometheus, gRPC.
+    docker, docker-compose, git, Kubernetes, Airflow, Prometheus, gRPC, TensorRT, ONNX, Hadoop, Spark.
 </p>
