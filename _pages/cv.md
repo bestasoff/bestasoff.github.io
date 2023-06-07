@@ -43,20 +43,6 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
     <li> Participate in regular learning meetups, sharing the insights from recent ML papers.</li>
 </ul>
 
-<h3><img src="https://artlabs.tech/wp-content/uploads/2020/11/Logo.png" alt="artlabs" width="25" height="25"/> ArtLabs </h3>
-<p style="text-align:left;">
-    <em>Machine Learning Engineer</em>
-    <span style="float:right;">
-        May, 2022 - August, 2022
-    </span>
-</p>
-<ul>
-    <li>Created and curated custom datasets from unstructured client's data using Pandas and SQL.</li>
-    <li>Trained numerous time-series models for demand forecasting resulting in reducng forecast MAPE on 20%.</li>
-    <li>Developed API for the model using FastAPI.</li>
-    <li> Constructed production pipelines with AirFlow to convert raw data into feature vector, feed it into the model and forecast the product demand.</li>
-</ul>
-
 <h3><img src="https://stripe-images.s3.us-west-1.amazonaws.com/works-with/57716240664220abbfc76ae713a23d1dbc152308" alt="itechart" width="25" height="25"/> iTechArt </h3>
 <p style="text-align:left;">
     <em>Machine Learning Engineer</em>
@@ -65,7 +51,16 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
     </span>
 </p>
 <ul>
-    <li>Developed gRPC endpoint client/server image classification service with FastAPI framework. Used Uvicorn and Prometheus with Docker and Supervisord. The endpoint was designed to asynchronically process client requests for classification and return the responses to client.</li>
+    <li>Designed and implemented an image classification service using the gRPC endpoint client/server architecture and the FastAPI framework.</li>
+    <li>Utilized Uvicorn and Prometheus in conjunction with Docker and Supervisord to create a robust and scalable solution.</li>
+    <li>Developed and implemented custom model architectures using C++, resulting in up to a 45\% reduction in model latency.</li>
+    <li>Generated synthetic datasets to supplement real data, leading to an increase in model accuracy of up to 10%.</li>
+    <li>Successfully distilled the CNN model into a model that was 3 times smaller while maintaining nearly identical evaluation metrics.</li>
+</ul>
+<ul>
+    <li>Created and curated custom datasets from unstructured client data using Pandas and SQL.</li>
+    <li>Trained numerous time-series models for demand forecasting, reducing forecast MAPE by 20%.</li>
+    <li>Constructed production pipelines with AirFlow to convert raw data into a feature vector, feed it into the model, and forecast the product demand.</li>
 </ul>
 
 <h3><img src="https://magistral-russia.ru/wp-content/uploads/2022/06/yandex_znak.png" alt="yandex" width="25" height="25"/> Yandex </h3>
@@ -123,5 +118,5 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
 </p>
 <p style="text-align:left;">
     <b>Tools:</b>
-    docker, docker-compose, git, Kubernetes, Airflow, Prometheus, gRPC, TensorRT, ONNX, Hadoop, Spark.
+    docker, docker-compose, git, Kubernetes, Terraform, Airflow, Prometheus, Postgres, Elasticsearch, Kibana, Logstash, gRPC, TensorRT, ONNX, Hadoop, Spark, Flink, Kafka.
 </p>
