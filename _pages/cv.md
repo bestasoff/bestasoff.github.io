@@ -103,7 +103,7 @@ nav_order: 4
     <li>Passed courses: Python, C++, Algorithms and Data Structures, Probability and Statistics, Machine Learning, Computer Vision, Natural Language Processing, Deep Learning, Reinforcement Learning, Efficient DL systems.</li>
 </ul>
 
-<h3><img src="https://fsc.bsu.by/wp-content/uploads/2019/06/unnamed.jpg" alt="bsu" width="25" height="25"/> Belarusian State University </h3>
+<h3><img src="https://images.seeklogo.com/logo-png/43/1/bsu-belarusian-state-university-logo-png_seeklogo-432128.png" alt="bsu" width="25" height="25"/> Belarusian State University </h3>
 <p style="text-align:left;">
     <em>Bachelor's degree, Faculty of Applied Mathematics and Computer Science</em>
     <span style="float:right;">
