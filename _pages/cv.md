@@ -116,21 +116,3 @@ nav_order: 4
     <li>Prepared educational tasks for SIRIUS school center.</li>
     <li>Was member of faculty volleyball team.</li>
 </ul>
-
-# Skills
-<p style="text-align:left;">
-    <b>Programming languages:</b>
-    C++, Python.
-</p>
-<p style="text-align:left;">
-    <b>Frameworks:</b>
-    PyTorch, torch.distributed, torchlightning, huggingface, FastAPI, Flask, scikit-learn, OpenCV, numpy, pandas, catboost, xgboost, coreml, bitsandbytes.
-</p>
-<p style="text-align:left;">
-    <b>Machine Learning:</b>
-    Computer Vision, NLP, classical ML, distributed training, data-parallel training, model-parallel training, model deployment, model distillation, model compression, memory footprint reduction.
-</p>
-<p style="text-align:left;">
-    <b>Tools:</b>
-    docker, docker-compose, git, Kubernetes, Terraform, Airflow, Prometheus, Postgres, Elasticsearch, Kibana, Logstash, gRPC, TensorRT, ONNX, Hadoop, Spark, Flink, Kafka.
-</p>
