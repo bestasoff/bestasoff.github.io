@@ -9,11 +9,26 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
 
 # Experience
 
+<h3><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fcac3c13-3a6c-5909-a6f4-162ee3f71b63/3a06f831-ba1d-5f54-b203-52c2c00f69c8.jpg" alt="mirage" width="25" height="25"/> Mirage (ex Captions) </h3>
+<p style="text-align:left;">
+    <em>Member of Technical Staff (Research Engineer)</em>
+    <span style="float:right;">
+        July, 2023 - Present
+    </span>
+</p>
+<ul>
+    <li>Conduct applied research on large-scale transformer models and generative AI systems for video generation and computer vision applications.</li>
+    <li>Develop and optimize model architectures for production environments, focusing on distributed training and inference optimization.</li>
+    <li>Work with large-scale distributed computing clusters to train and deploy foundation models for video generation and lip synchronization technologies.</li>
+    <li>Implement scalable training pipelines for generative AI systems, including model optimization and performance tuning.</li>
+    <li>Collaborate on research projects involving video generation with large foundation models and advanced computer vision techniques.</li>
+</ul>
+
 <h3><img src="https://pbs.twimg.com/media/FBp56YOXIAEYRSO.jpg" alt="yandex" width="25" height="25"/> Yandex School of Data Analysis </h3>
 <p style="text-align:left;">
     <em>ML course tutor assistant</em>
     <span style="float:right;">
-        May, 2021 - Present
+        May, 2021 - June, 2023
     </span>
 </p>
 <ul>
@@ -27,7 +42,7 @@ cv_pdf: Stanislau_Beliasau_CV.pdf
     <img src="https://play-lh.googleusercontent.com/RujFpUpJZjc-d5bScOi-n-zs9ak4vTs_Y_bB1rJDdjLxpZsSilM67r49R2fwfuNneMc=w240-h480-rw" alt="gradient" width="25" height="25"/>
     Gradient & Persona: AI Photo & Video mobile editors </h3>
 <p style="text-align:left;">
-    <em>Middle Computer Vision Engineer</em>
+    <em>Computer Vision Engineer</em>
     <span style="float:right;">
         August, 2022 - May, 2023
     </span>
