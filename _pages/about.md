@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: profile.jpeg
+  image: profile.jpg
   image_circular: false # crops the image to make it circular
   address: >
     <p>U.S. Green Card holder</p>
