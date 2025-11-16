@@ -8,32 +8,31 @@ nav_order: 4
 
 # Experience
 
-<h3><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fcac3c13-3a6c-5909-a6f4-162ee3f71b63/3a06f831-ba1d-5f54-b203-52c2c00f69c8.jpg" alt="mirage" width="25" height="25"/> Mirage (ex Captions) </h3>
+<h3><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fcac3c13-3a6c-5909-a6f4-162ee3f71b63/3a06f831-ba1d-5f54-b203-52c2c00f69c8.jpg" alt="mirage" width="25" height="25"/> Mirage (FKA Captions) </h3>
 <p style="text-align:left;">
-    <em>Member of Technical Staff (Research Engineer)</em>
+    <em>Research Engineer, Member of Technical Staff</em>
     <span style="float:right;">
         July, 2023 - Present
     </span>
 </p>
 <ul>
-    <li>Conduct applied research on large-scale transformer models and generative AI systems for video generation and computer vision applications.</li>
-    <li>Develop and optimize model architectures for production environments, focusing on distributed training and inference optimization.</li>
-    <li>Work with large-scale distributed computing clusters to train and deploy foundation models for video generation and lip synchronization technologies.</li>
-    <li>Implement scalable training pipelines for generative AI systems, including model optimization and performance tuning.</li>
-    <li>Collaborate on research projects involving video generation with large foundation models and advanced computer vision techniques.</li>
+    <li>Contributed to development of Mirage, a 13B parameter text+audio+image-to-video generation model. Designed novel architectural components, implemented distributed training pipeline on 1000+ H100 GPUs achieving 40% MFU, and developed context-parallel training for sequence lengths up to 150k tokens.</li>
+    <li>Optimized Mirage Video inference achieving 4x faster startup times and 2x overall speedup through fp8 quantization, custom attention kernels, torch compilation, and inference-time caching with minimal quality degradation.</li>
+    <li>Optimized Mirage Audio model, a 10B parameter text+audio-to-audio model, achieving 30% training throughput improvement and 4x inference speedup through efficient kernels, torch compilation, and HSDP while maintaining quality.</li>
+    <li>Designed and implemented novel audio-to-landmarks architecture for lip-sync generation through extensive architecture exploration and ablation studies.</li>
+    <li>Designed and implemented automated evaluation framework for continuous checkpoint assessment using pub/sub architecture, integrating metrics computation, Weights&Biases logging, and automated video artifact uploads to cloud storage.</li>
+    <li>Evaluated GPU providers and made key infrastructure decisions enabling efficient multi-node training at scale.</li>
 </ul>
 
 <h3><img src="https://pbs.twimg.com/media/FBp56YOXIAEYRSO.jpg" alt="yandex" width="25" height="25"/> Yandex School of Data Analysis </h3>
 <p style="text-align:left;">
     <em>ML course tutor assistant</em>
     <span style="float:right;">
-        May, 2021 - June, 2023
+        February, 2022 - June, 2023
     </span>
 </p>
 <ul>
-    <li>Give lectures on machine learning including NLP and CV</li>
-    <li>Conduct seminars and check homework.</li>
-    <li>Implement LLM (GPT-2XL, OPT-6.7B) distributed training and inference pipelines: model-parallel, data-parallel, pipeline parallelism, memory offloading.</li>
+    <li>Served as ML course tutor at Yandex School of Data Analysis, giving lectures on NLP and computer vision, and designing coursework on distributed LLM training (GPT-2XL, OPT-6.7B).</li>
 </ul>
 
 <h3>
@@ -47,14 +46,11 @@ nav_order: 4
     </span>
 </p>
 <ul>
-    <li>Make a huge research on image generation, especially with Stable Diffusion model. Played a key role in developing brand-new method of encoding into its latent space. </li>
-    <li>Conduct various experiments with different Stable Diffusion down-stream tasks like custom fine-tuning, introduction of new modules, curating task-specific datasets, papers implementation. Accelerated image generation by 30%</li>
-    <li>Generate and curate custom datasets. Use CLIP, BLIP, StyleGAN, pix2pix models for processings. Resulted in obtaining datasets which helped to train new models.</li>
-    <li>Train brand-new re-aging img2img filters both server and realtime.</li>
-    <li>Train new versions of image warping body-tune models both for images and videos and  lightweight body segmentation models. Resulted in better postprocessing on inference.</li>
-    <li>Train dozens of new beauty filters, develop new loss functions for training. Resulted in better quality of model outputs.</li>
-    <li>Deploy models both on IOS and server using torch.jit and coreml.</li>
-    <li> Participate in regular learning meetups, sharing the insights from recent ML papers.</li>
+    <li>Designed and implemented novel image encoding method for personalized Stable Diffusion generation, replacing expensive DreamBooth fine-tuning with single-shot encoding from few images. Approach enabled identity-preserving generation without model fine-tuning; similar methods were later published and widely adopted in 2024.</li>
+    <li>Developed real-time GANs running on mobile devices at HD quality, 60fps while maintaining sub-2MB model size through aggressive quantization and architecture optimization.</li>
+    <li>Optimized Stable Diffusion inference achieving 30% speedup through architectural modifications, custom modules, and efficient sampling strategies.</li>
+    <li>Trained production models for re-aging, body reshaping (images and video), and body segmentation, iterating rapidly on novel architectures and dataset curation strategies.</li>
+    <li>Deployed models to iOS using CoreML and server infrastructure using TorchScript, optimizing for both on-device and cloud inference.</li>
 </ul>
 
 <h3><img src="https://stripe-images.s3.us-west-1.amazonaws.com/works-with/57716240664220abbfc76ae713a23d1dbc152308" alt="itechart" width="25" height="25"/> iTechArt </h3>
@@ -90,29 +86,30 @@ nav_order: 4
     <li>Developed similarity metrics for searhing similar logs.</li>
 </ul>
 
+# Publications
+
+- **Seeing Voices: Generating A-Roll Video from Audio with Mirage** - A. Sundararaman, A. Adishesha, A. Jaegle, D. Bigioi, H. Song, J. Kyl, J. Mao, K. Lan, M. Komeili, S. Athar, S. Babayan, S. Beliasau, W. Buchwalter. *arXiv:2506.08279*, 2025. [[link]](https://arxiv.org/abs/2506.08279)
+- **How to Fine-Tune Very Large Model if It Doesn't Fit on Your GPU** - Technical article on distributed training techniques for large language models. 600+ reactions, 2022. [[link]](https://bestasoff.medium.com/how-to-fine-tune-very-large-model-if-it-doesnt-fit-on-your-gpu-3561e50859af)
+
 # Education
 <h3><img src="https://pbs.twimg.com/media/FBp56YOXIAEYRSO.jpg" alt="ysda" width="25" height="25"/> Yandex School of Data Analysis </h3>
 <p style="text-align:left;">
-    <em>Mater's level degree Machine Learning developer academic program</em>
+    <em>Master's degree level Machine Learning developer academic program</em>
     <span style="float:right;">
         September, 2020 - June, 2022
     </span>
 </p>
 <ul>
-    <li>The two-year Yandex program was created in 2007 and has become Russia’s leading data analysis program.</li>
-    <li>Passed courses: Python, C++, Algorithms and Data Structures, Probability and Statistics, Machine Learning, Computer Vision, Natural Language Processing, Deep Learning, Reinforcement Learning, Efficient DL systems.</li>
+    <li>Relevant coursework: Efficient Deep Learning Systems, Reinforcement Learning, Computer Vision, NLP, Recommendation Systems.</li>
 </ul>
 
 <h3><img src="https://images.seeklogo.com/logo-png/43/1/bsu-belarusian-state-university-logo-png_seeklogo-432128.png" alt="bsu" width="25" height="25"/> Belarusian State University </h3>
 <p style="text-align:left;">
-    <em>Bachelor's degree, Faculty of Applied Mathematics and Computer Science</em>
+    <em>Bachelor of Computer Science</em>
     <span style="float:right;">
-        September, 2018 - June, 2022
+        September, 2018 - August, 2022
     </span>
 </p>
 <ul>
-    <li>Took part in Educational-Scientific Conference of Students on Recent Methods of ML and Data Analysis.</li>
-    <li>Took part in Annual Belarusian State University Conference of Students.</li>
-    <li>Prepared educational tasks for SIRIUS school center.</li>
-    <li>Was member of faculty volleyball team.</li>
+    <li>Awarded a full scholarship and stipend by the government per entrance exam results.</li>
 </ul>
