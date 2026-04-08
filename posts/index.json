@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Shaping Voices: Mirage Audio",
+    "date": "2025-12-16",
+    "description": "Launch of mirage audio — a 10B text+audio-to-audio model that generates expressive vocal performances, enables voice design and cloning, and powers cross-language voice transformation.",
+    "external": "https://captions.ai/blog/shaping-voices"
+  },
+  {
+    "title": "Seeing Voices: Generating A-Roll Video from Audio with Mirage",
+    "date": "2025-06-09",
+    "description": "Our paper on mirage video — a 13B audio-conditioned model that generates fully synchronized A-roll: speaker, lips, expressions, and gestures from audio alone. arXiv:2506.08279.",
+    "external": "https://arxiv.org/abs/2506.08279"
+  },
+  {
+    "title": "How to Fine-Tune Very Large Model if It Doesn't Fit on Your GPU",
+    "date": "2022-04-11",
+    "description": "A practical guide to training models that exceed single-GPU memory: gradient checkpointing, mixed precision, ZeRO, offloading, and sharded data parallelism. 600+ reactions on Medium.",
+    "external": "https://bestasoff.medium.com/how-to-fine-tune-very-large-model-if-it-doesnt-fit-on-your-gpu-3561e50859af"
+  }
+]

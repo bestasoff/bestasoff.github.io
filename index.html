@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stanislau Beliasau — ex-Mirage research engineer. AI video generation, computer vision.">
+  <meta property="og:title" content="Stanislau Beliasau">
+  <meta property="og:description" content="ex-Mirage research engineer. AI video generation, computer vision.">
+  <meta property="og:url" content="https://bestasoff.github.io/">
+  <meta property="og:type" content="website">
+  <title>bestasoff</title>
+  <link rel="icon" href="https://github.com/bestasoff.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/gruvbox-dark-medium.min.css">
+  <style>
+    /* ── Theme tokens ─ Gruvbox light + dark ────────────── */
+    :root {
+      --font-mono: "SF Mono", "Fira Code", "JetBrains Mono", Menlo, Consolas, monospace;
+      --col-max: 80ch;
+      --pad-x: clamp(0.75rem, 3vw, 2rem);
+      --pad-y: 2rem;
+
+      /* light (default) */
+      --bg:#fbf1c7; --bg1:#f2e5bc; --bg2:#d5c4a1;
+      --fg:#3c3836; --fg-dim:#7c6f64;
+      --red:#9d0006; --green:#79740e; --yellow:#b57614;
+      --blue:#076678; --purple:#8f3f71; --aqua:#427b58; --orange:#af3a03;
+    }
+    :root[data-theme="dark"] {
+      --bg:#282828; --bg1:#3c3836; --bg2:#504945;
+      --fg:#ebdbb2; --fg-dim:#a89984;
+      --red:#fb4934; --green:#b8bb26; --yellow:#fabd2f;
+      --blue:#83a598; --purple:#d3869b; --aqua:#8ec07c; --orange:#fe8019;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --bg:#282828; --bg1:#3c3836; --bg2:#504945;
+        --fg:#ebdbb2; --fg-dim:#a89984;
+        --red:#fb4934; --green:#b8bb26; --yellow:#fabd2f;
+        --blue:#83a598; --purple:#d3869b; --aqua:#8ec07c; --orange:#fe8019;
+      }
+    }
+
+    /* ── Reset + base ───────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { color-scheme: light dark; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: var(--font-mono); font-size: 14px; line-height: 1.6;
+      min-height: 100vh;
+      padding: var(--pad-y) var(--pad-x);
+      max-width: var(--col-max); margin: 0 auto;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--yellow); text-decoration: underline; }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--bg2); padding-bottom: 1rem; position: relative; }
+    h1 { color: var(--green); font-weight: normal; font-size: 1.2rem; }
+    .tagline { color: var(--fg-dim); margin-top: 0.25rem; }
+    .tagline::before { content: "// "; color: var(--bg2); }
+
+    nav { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
+    nav a { color: var(--fg-dim); white-space: nowrap; }
+    nav a::before { content: "["; color: var(--bg2); }
+    nav a::after  { content: "]"; color: var(--bg2); }
+    nav a:hover, nav a.active { color: var(--yellow); text-decoration: none; }
+    nav a:hover span, nav a.active span { text-decoration: underline; }
+
+    .theme-toggle {
+      position: absolute; top: 0; right: 0;
+      background: none; border: 1px solid var(--bg2); color: var(--fg-dim);
+      font: inherit; padding: 0.15rem 0.5rem; cursor: pointer;
+    }
+    .theme-toggle:hover { color: var(--yellow); border-color: var(--yellow); }
+
+    /* ── Section visibility (driven by [data-section] on <html>) ── */
+    section { display: none; }
+    :root[data-section="about"]   #about,
+    :root[data-section="cv"]      #cv,
+    :root[data-section="blog"]    #blog,
+    :root[data-section="contact"] #contact { display: block; }
+
+    h2 { color: var(--orange); font-weight: normal; font-size: 1.1rem; margin-bottom: 1rem; }
+    h2::before { content: "## "; color: var(--fg-dim); }
+    h3 { color: var(--aqua); font-weight: normal; font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+    h3::before { content: "### "; color: var(--fg-dim); }
+    p { margin-bottom: 0.75rem; }
+
+    /* ── CV roles + small inline logos ─────────────────── */
+    .role { margin-bottom: 1.5rem; }
+    .role-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+    .role-co { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--green); }
+    .role-co img {
+      width: 18px; height: 18px;
+      object-fit: contain;
+      border-radius: 2px;
+      background: var(--bg1);
+      flex: 0 0 auto;
+    }
+    .role-dates { color: var(--fg-dim); }
+    .role-title { color: var(--fg-dim); font-style: italic; margin: 0.1rem 0 0.4rem; }
+    .role ul { margin: 0; padding-left: 1.2rem; }
+    .role li { margin-bottom: 0.3rem; }
+
+    /* ── Blog list ─────────────────────────────────────── */
+    .post-list { list-style: none; }
+    .post-list li { margin-bottom: 0.85rem; padding-left: 0.75rem; border-left: 2px solid var(--bg2); }
+    .post-date { color: var(--fg-dim); display: inline-block; min-width: 11ch; }
+    .post-link { color: var(--blue); }
+    .post-link.external::after { content: " ↗"; color: var(--fg-dim); font-size: 0.85em; }
+    .post-desc { color: var(--fg-dim); display: block; margin-top: 0.15rem; font-size: 0.92em; }
+
+    /* ── Blog post viewer (#blog-content) ──────────────── */
+    .blog-back { display: inline-block; margin-bottom: 1rem; color: var(--fg-dim); }
+    .blog-back::before { content: "← "; }
+    #blog-content h1 { color: var(--green); font-weight: normal; font-size: 1.15rem; margin-bottom: 0.5rem; }
+    #blog-content h2 { color: var(--aqua); font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+    #blog-content h2::before { content: "## "; color: var(--fg-dim); }
+    #blog-content h3 { color: var(--yellow); font-size: 0.97rem; margin: 1.25rem 0 0.5rem; }
+    #blog-content h3::before { content: "### "; color: var(--fg-dim); }
+    #blog-content p { margin: 0.75rem 0; }
+    #blog-content pre { background: var(--bg1); border-left: 3px solid var(--aqua); padding: 1rem; margin: 1rem 0; overflow-x: auto; }
+    #blog-content pre code, #blog-content pre code.hljs { background: none; padding: 0; }
+    #blog-content :not(pre) > code { background: var(--bg1); color: var(--yellow); padding: 0.15rem 0.4rem; border-radius: 3px; }
+    #blog-content blockquote { border-left: 3px solid var(--purple); padding-left: 1rem; color: var(--fg-dim); margin: 1rem 0; }
+    #blog-content strong { color: var(--orange); font-weight: bold; }
+    #blog-content a { color: var(--blue); }
+    #blog-content a:hover { color: var(--yellow); text-decoration: underline; }
+    #blog-content ul, #blog-content ol { padding-left: 2rem; margin: 0.75rem 0; }
+    #blog-content img { max-width: 100%; border: 1px solid var(--bg2); margin: 1rem 0; display: block; }
+    #blog-content hr { border: none; border-top: 1px solid var(--bg2); margin: 1.5rem 0; }
+    .blog-meta { color: var(--fg-dim); margin-bottom: 1.5rem; }
+
+    /* ── Contact list ──────────────────────────────────── */
+    .links { list-style: none; }
+    .links li { margin-bottom: 0.35rem; }
+    .links span { display: inline-block; width: 10ch; color: var(--fg-dim); }
+    .links span::before { content: "> "; color: var(--orange); }
+
+    /* ── Footer ────────────────────────────────────────── */
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--bg2); color: var(--fg-dim); font-size: 0.9em; }
+
+    @media (max-width: 480px) {
+      .theme-toggle { position: static; display: inline-block; margin-top: 0.75rem; }
+    }
+  </style>
+
+  <!-- Inline bootstrap: prevents FOUC for theme + section -->
+  <script>
+    (function () {
+      var SECTIONS = ['about','cv','blog','contact'];
+      var raw = (location.hash || '').replace(/^#/, '');
+      var top = raw.split('/')[0];
+      var s = SECTIONS.indexOf(top) !== -1 ? top : 'about';
+      document.documentElement.setAttribute('data-section', s);
+
+      var saved;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || sys);
+    })();
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>stanislau beliasau</h1>
+    <p class="tagline">ex-mirage research engineer</p>
+    <nav>
+      <a href="#about"   data-tab="about"><span>about</span></a>
+      <a href="#cv"      data-tab="cv"><span>cv</span></a>
+      <a href="#blog"    data-tab="blog"><span>blog</span></a>
+      <a href="#contact" data-tab="contact"><span>contact</span></a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">[theme]</button>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>about</h2>
+    <p>i'm a research engineer most recently at <a href="https://mirage.app/">mirage</a> (jul 2023 — mar 2026), where i worked on ai-powered video and audio generation — large-scale training and inference optimization for talking-avatar systems and lip-synced, audio-driven video models across computer vision and the audio domain.</p>
+    <p>i hold a bsc in computer science from <a href="https://bsu.by/">belarusian state university</a> and completed the machine learning engineer program at <a href="https://academy.yandex.com/dataschool/">yandex school of data analysis</a>.</p>
+    <p class="tagline">based in new york, usa</p>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>cv</h2>
+    <p><a href="/assets/pdf/Stanislau_Beliasau_CV.pdf">download pdf</a></p>
+
+    <h3>experience</h3>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/mirage.jpg" alt=""> mirage (fka captions)</span>
+        <span class="role-dates">jul 2023 — mar 2026</span>
+      </div>
+      <p class="role-title">research engineer, member of technical staff</p>
+      <ul>
+        <li>contributed to mirage, a 13B-parameter text+audio+image-to-video model. built distributed training on 1000+ H100 GPUs at 40% MFU; context-parallel up to 150k tokens.</li>
+        <li>optimized mirage video inference: 4x faster startup, 2x overall speedup via fp8 quantization, custom attention kernels, torch compile, and inference caching.</li>
+        <li>optimized mirage audio (10B text+audio-to-audio): +30% training throughput, 4x inference speedup via efficient kernels, torch compile, and HSDP.</li>
+        <li>designed and implemented a novel audio-to-landmarks architecture for lip-sync.</li>
+        <li>built an automated eval framework for continuous checkpoint assessment (pub/sub, W&amp;B logging, cloud uploads).</li>
+        <li>evaluated GPU providers and drove infra decisions for efficient multi-node training at scale.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/ysda.jpg" alt=""> yandex school of data analysis</span>
+        <span class="role-dates">feb 2022 — jun 2023</span>
+      </div>
+      <p class="role-title">ml course tutor</p>
+      <ul><li>gave lectures on NLP and computer vision; designed coursework on distributed LLM training (GPT-2XL, OPT-6.7B).</li></ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/gradient.png" alt=""><img src="/assets/img/logos/persona.webp" alt=""> gradient &amp; persona</span>
+        <span class="role-dates">aug 2022 — may 2023</span>
+      </div>
+      <p class="role-title">computer vision engineer</p>
+      <ul>
+        <li>designed novel image-encoding for personalized stable diffusion, replacing dreambooth fine-tuning with single-shot encoding (predated similar 2024 publications).</li>
+        <li>trained real-time mobile GANs at HD/60fps with sub-2MB model size.</li>
+        <li>30% stable-diffusion inference speedup via architectural changes and efficient sampling.</li>
+        <li>shipped production models for re-aging, body reshaping (image+video), body segmentation.</li>
+        <li>deployed to iOS via CoreML and server via TorchScript.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/itechart.png" alt=""> itechart</span>
+        <span class="role-dates">feb 2022 — aug 2022</span>
+      </div>
+      <p class="role-title">machine learning engineer</p>
+      <ul>
+        <li>built a gRPC + FastAPI image-classification service with Uvicorn, Prometheus, Docker, Supervisord.</li>
+        <li>custom architectures in C++, ~45% latency reduction.</li>
+        <li>synthetic data improved accuracy by up to 10%.</li>
+        <li>distilled a CNN into a 3x smaller model with near-identical metrics.</li>
+        <li>time-series demand forecasting reduced MAPE by 20%; AirFlow production pipelines.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/yandex.png" alt=""> yandex</span>
+        <span class="role-dates">may 2021 — nov 2021</span>
+      </div>
+      <p class="role-title">software engineer intern</p>
+      <ul>
+        <li>rule-based + NLP solutions for affiliations parsing.</li>
+        <li>flask-based annotation service, dockerized and deployed.</li>
+        <li>similarity metrics for log search.</li>
+      </ul>
+    </div>
+
+    <h3>education</h3>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/ysda.jpg" alt=""> yandex school of data analysis</span>
+        <span class="role-dates">sep 2020 — jun 2022</span>
+      </div>
+      <p class="role-title">master's-level ml academic program</p>
+      <ul><li>coursework: efficient DL systems, RL, computer vision, NLP, recommender systems.</li></ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-co"><img src="/assets/img/logos/bsu.png" alt=""> belarusian state university</span>
+        <span class="role-dates">sep 2018 — aug 2022</span>
+      </div>
+      <p class="role-title">bsc, computer science</p>
+      <ul><li>full government scholarship awarded on entrance-exam results.</li></ul>
+    </div>
+  </section>
+
+  <!-- BLOG (writing — internal markdown + external links) -->
+  <section id="blog">
+    <h2>blog</h2>
+    <div id="blog-list">
+      <ul class="post-list" id="post-list">
+        <li>loading…</li>
+      </ul>
+    </div>
+    <div id="blog-post" hidden>
+      <a href="#blog" class="blog-back">back to blog</a>
+      <article id="blog-content"></article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>contact</h2>
+    <ul class="links">
+      <li><span>email</span>    <a href="mailto:bestasoff@gmail.com">bestasoff@gmail.com</a></li>
+      <li><span>twitter</span>  <a href="https://twitter.com/bestasoff">twitter.com/bestasoff</a></li>
+      <li><span>linkedin</span> <a href="https://linkedin.com/in/bestasoff">linkedin.com/in/bestasoff</a></li>
+      <li><span>telegram</span> <a href="https://t.me/bestasoff">t.me/bestasoff</a></li>
+      <li><span>medium</span>   <a href="https://medium.com/@bestasoff">medium.com/@bestasoff</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> stanislau beliasau</p>
+  </footer>
+
+  <!-- Markdown + syntax highlighting (CDN, jkyl-style) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@15/marked.min.js"></script>
+
+  <!-- Runtime: routing, theme, blog loader, year -->
+  <script>
+    (function () {
+      'use strict';
+      var SECTIONS = ['about','cv','blog','contact'];
+      var root = document.documentElement;
+
+      function parseHash() {
+        var raw = (location.hash || '').replace(/^#/, '');
+        var parts = raw.split('/');
+        var top = SECTIONS.indexOf(parts[0]) !== -1 ? parts[0] : 'about';
+        return { section: top, slug: parts[1] || null };
+      }
+
+      function setActiveTab(id) {
+        SECTIONS.forEach(function (k) {
+          var tab = document.querySelector('[data-tab="' + k + '"]');
+          if (!tab) return;
+          if (k === id) tab.classList.add('active');
+          else tab.classList.remove('active');
+        });
+      }
+
+      function showBlogList() {
+        document.getElementById('blog-list').hidden = false;
+        document.getElementById('blog-post').hidden = true;
+      }
+
+      function showBlogPost() {
+        document.getElementById('blog-list').hidden = true;
+        document.getElementById('blog-post').hidden = false;
+      }
+
+      var postsManifest = null;
+      function loadManifest() {
+        if (postsManifest) return Promise.resolve(postsManifest);
+        return fetch('posts/index.json')
+          .then(function (r) { return r.json(); })
+          .then(function (data) { postsManifest = data; return data; })
+          .catch(function () { return []; });
+      }
+
+      function renderPostList() {
+        return loadManifest().then(function (posts) {
+          var ul = document.getElementById('post-list');
+          ul.innerHTML = '';
+          if (!posts.length) {
+            ul.innerHTML = '<li>no posts yet.</li>';
+            return;
+          }
+          posts.forEach(function (p) {
+            var li = document.createElement('li');
+            var date = document.createElement('span');
+            date.className = 'post-date';
+            date.textContent = p.date || '';
+            var a = document.createElement('a');
+            a.className = 'post-link';
+            if (p.external) {
+              a.href = p.external;
+              a.target = '_blank';
+              a.rel = 'noopener';
+              a.classList.add('external');
+            } else {
+              a.href = '#blog/' + p.slug;
+            }
+            a.textContent = p.title;
+            var desc = document.createElement('span');
+            desc.className = 'post-desc';
+            desc.textContent = p.description || '';
+            li.appendChild(date);
+            li.appendChild(a);
+            li.appendChild(desc);
+            ul.appendChild(li);
+          });
+        });
+      }
+
+      function renderPost(slug) {
+        showBlogPost();
+        var content = document.getElementById('blog-content');
+        content.innerHTML = 'loading…';
+        loadManifest().then(function (posts) {
+          var meta = null;
+          for (var i = 0; i < posts.length; i++) {
+            if (posts[i].slug === slug) { meta = posts[i]; break; }
+          }
+          return fetch('posts/' + slug + '.md').then(function (r) {
+            if (!r.ok) throw new Error('not found');
+            return r.text();
+          }).then(function (md) {
+            var header = '';
+            if (meta) {
+              header = '<div class="blog-meta">' + (meta.date || '') + '</div>';
+            }
+            content.innerHTML = header + window.marked.parse(md);
+            // Rewrite relative image paths to posts/
+            content.querySelectorAll('img').forEach(function (img) {
+              var src = img.getAttribute('src');
+              if (src && !/^(https?:|\/|posts\/)/.test(src)) img.src = 'posts/' + src;
+            });
+            // Highlight code
+            if (window.hljs) {
+              content.querySelectorAll('pre code').forEach(function (el) { window.hljs.highlightElement(el); });
+            }
+            window.scrollTo(0, 0);
+          }).catch(function () {
+            content.innerHTML = '<p>post not found.</p>';
+          });
+        });
+      }
+
+      function route() {
+        var r = parseHash();
+        root.setAttribute('data-section', r.section);
+        setActiveTab(r.section);
+        if (r.section === 'blog') {
+          if (r.slug) renderPost(r.slug);
+          else { showBlogList(); renderPostList(); }
+        }
+        if (r.section !== 'blog' || !r.slug) window.scrollTo(0, 0);
+      }
+      window.addEventListener('hashchange', route);
+      route();
+
+      // Theme toggle
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+      }
+      var mql = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mql && mql.addEventListener) {
+        mql.addEventListener('change', function (e) {
+          var saved;
+          try { saved = localStorage.getItem('theme'); } catch (err) {}
+          if (!saved) root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        });
+      }
+
+      // Footer year
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>

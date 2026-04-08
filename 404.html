@@ -1,9 +1,44 @@
----
-layout: page
-permalink: /404.html
-title: "Page not found"
-description: "Looks like there has been a mistake. Nothing exists here."
-redirect: true
----
-
-<p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="{{ site.baseurl }}/">here</a>.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — bestasoff</title>
+  <link rel="icon" href="https://github.com/bestasoff.png">
+  <style>
+    :root {
+      --font-mono: "SF Mono", "Fira Code", "JetBrains Mono", Menlo, Consolas, monospace;
+      --bg:#fbf1c7; --bg2:#d5c4a1;
+      --fg:#3c3836; --fg-dim:#7c6f64;
+      --green:#79740e; --blue:#076678; --yellow:#b57614; --orange:#af3a03;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#282828; --bg2:#504945;
+        --fg:#ebdbb2; --fg-dim:#a89984;
+        --green:#b8bb26; --blue:#83a598; --yellow:#fabd2f; --orange:#fe8019;
+      }
+    }
+    html { color-scheme: light dark; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg); color: var(--fg);
+      font-family: var(--font-mono); font-size: 14px; line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem clamp(0.75rem, 3vw, 2rem);
+      max-width: 80ch; margin: 0 auto;
+    }
+    h1 { color: var(--orange); font-weight: normal; font-size: 1.2rem; margin-bottom: 1rem; }
+    h1::before { content: "~ "; color: var(--fg-dim); }
+    p { margin-bottom: 0.75rem; }
+    p::before { content: "// "; color: var(--bg2); }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--yellow); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <p>nothing here.</p>
+  <p><a href="/">back home</a></p>
+</body>
+</html>
