@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <title>bestasoff</title>
   <link rel="icon" href="https://github.com/bestasoff.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/gruvbox-dark-medium.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/night-owl.min.css">
   <style>
     /* ── Theme tokens ─ Gruvbox light + dark ────────────── */
     :root {
@@ -26,17 +26,18 @@
       --blue:#076678; --purple:#8f3f71; --aqua:#427b58; --orange:#af3a03;
     }
     :root[data-theme="dark"] {
-      --bg:#282828; --bg1:#3c3836; --bg2:#504945;
-      --fg:#ebdbb2; --fg-dim:#a89984;
-      --red:#fb4934; --green:#b8bb26; --yellow:#fabd2f;
-      --blue:#83a598; --purple:#d3869b; --aqua:#8ec07c; --orange:#fe8019;
+      /* night-owl-inspired deep navy */
+      --bg:#011627; --bg1:#0e2235; --bg2:#2c4257;
+      --fg:#d6deeb; --fg-dim:#637e9c;
+      --red:#ef5350; --green:#addb67; --yellow:#ecc48d;
+      --blue:#82aaff; --purple:#c792ea; --aqua:#7fdbca; --orange:#f78c6c;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme]) {
-        --bg:#282828; --bg1:#3c3836; --bg2:#504945;
-        --fg:#ebdbb2; --fg-dim:#a89984;
-        --red:#fb4934; --green:#b8bb26; --yellow:#fabd2f;
-        --blue:#83a598; --purple:#d3869b; --aqua:#8ec07c; --orange:#fe8019;
+        --bg:#011627; --bg1:#0e2235; --bg2:#2c4257;
+        --fg:#d6deeb; --fg-dim:#637e9c;
+        --red:#ef5350; --green:#addb67; --yellow:#ecc48d;
+        --blue:#82aaff; --purple:#c792ea; --aqua:#7fdbca; --orange:#f78c6c;
       }
     }
 
@@ -57,12 +58,12 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--bg2); padding-bottom: 1rem; position: relative; }
     h1 { color: var(--green); font-weight: normal; font-size: 1.2rem; }
     .tagline { color: var(--fg-dim); margin-top: 0.25rem; }
-    .tagline::before { content: "// "; color: var(--bg2); }
+    .tagline::before { content: "// "; color: var(--green); }
 
     nav { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
     nav a { color: var(--fg-dim); white-space: nowrap; }
-    nav a::before { content: "["; color: var(--bg2); }
-    nav a::after  { content: "]"; color: var(--bg2); }
+    nav a::before { content: "["; color: var(--blue); }
+    nav a::after  { content: "]"; color: var(--blue); }
     nav a:hover, nav a.active { color: var(--yellow); text-decoration: none; }
     nav a:hover span, nav a.active span { text-decoration: underline; }
 
@@ -81,9 +82,9 @@
     :root[data-section="contact"] #contact { display: block; }
 
     h2 { color: var(--orange); font-weight: normal; font-size: 1.1rem; margin-bottom: 1rem; }
-    h2::before { content: "## "; color: var(--fg-dim); }
+    h2::before { content: "## "; color: var(--purple); }
     h3 { color: var(--aqua); font-weight: normal; font-size: 1rem; margin: 1.5rem 0 0.5rem; }
-    h3::before { content: "### "; color: var(--fg-dim); }
+    h3::before { content: "### "; color: var(--blue); }
     p { margin-bottom: 0.75rem; }
 
     /* ── CV roles + small inline logos ─────────────────── */
@@ -107,17 +108,17 @@
     .post-list li { margin-bottom: 0.85rem; padding-left: 0.75rem; border-left: 2px solid var(--bg2); }
     .post-date { color: var(--fg-dim); display: inline-block; min-width: 11ch; }
     .post-link { color: var(--blue); }
-    .post-link.external::after { content: " ↗"; color: var(--fg-dim); font-size: 0.85em; }
+    .post-link.external::after { content: " ↗"; color: var(--aqua); font-size: 0.85em; }
     .post-desc { color: var(--fg-dim); display: block; margin-top: 0.15rem; font-size: 0.92em; }
 
     /* ── Blog post viewer (#blog-content) ──────────────── */
     .blog-back { display: inline-block; margin-bottom: 1rem; color: var(--fg-dim); }
-    .blog-back::before { content: "← "; }
+    .blog-back::before { content: "← "; color: var(--aqua); }
     #blog-content h1 { color: var(--green); font-weight: normal; font-size: 1.15rem; margin-bottom: 0.5rem; }
     #blog-content h2 { color: var(--aqua); font-size: 1rem; margin: 1.5rem 0 0.5rem; }
-    #blog-content h2::before { content: "## "; color: var(--fg-dim); }
+    #blog-content h2::before { content: "## "; color: var(--purple); }
     #blog-content h3 { color: var(--yellow); font-size: 0.97rem; margin: 1.25rem 0 0.5rem; }
-    #blog-content h3::before { content: "### "; color: var(--fg-dim); }
+    #blog-content h3::before { content: "### "; color: var(--blue); }
     #blog-content p { margin: 0.75rem 0; }
     #blog-content pre { background: var(--bg1); border-left: 3px solid var(--aqua); padding: 1rem; margin: 1rem 0; overflow-x: auto; }
     #blog-content pre code, #blog-content pre code.hljs { background: none; padding: 0; }
